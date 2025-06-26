@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rezervări Petrecere la Piscină</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffe6ef;
+      color: #333;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: schimbareFundal 30s infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes schimbareFundal {
+      0%   { background-image: url('piscina1.jpg'); }
+      33%  { background-image: url('piscina2.jpg'); }
+      66%  { background-image: url('piscina3.jpg'); }
+      100% { background-image: url('piscina1.jpg'); }
+    }
+
+    header {
+      background-color: #d81b60;
+      color: white;
+      padding: 30px 10px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .info-box {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: 40px auto;
+      box-shadow: 0 0 15px rgba(216, 27, 96, 0.2);
+      line-height: 1.7;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 40px auto;
+      box-shadow: 0 0 20px rgba(216, 27, 96, 0.4);
+    }
+
+    input[type="text"], input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #d81b60;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #ad1457;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #ffe6ef;
+      font-size: 16px;
+    }
+
+    footer a {
+      color: #d81b60;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .separator {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 20px;
+      color: #d81b60;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Petrecere la Piscină</h1>
+  <h2>REZERVĂRI</h2>
+</header>
+
+<main>
+
+  <div class="info-box">
+    <h3>🏝️ Infinity Pool Party – 18 iulie 2025</h3>
+    <p>📍 <strong>Verendin, județul Caraș-Severin</strong></p>
+
+    <div class="separator">⸻</div>
+
+    <p><strong>📌 Despre locație:</strong><br>
+    Infinity Pool Verendin e o locație retrasă, aflată într-o zonă liniștită și verde, perfectă pentru relaxare ziua și distracție seara. Piscina infinity îți oferă un peisaj spectaculos și un vibe fresh – genul de loc unde vrei să fii vara, cu prietenii.</p>
+
+    <p><strong>🕘 Program:</strong><br>
+    • 10:00 – 22:00: Acces piscină, muzică lejeră, cocktailuri<br>
+    • 22:00 – 05:00: DJ Dinc dă drumul la petrecere</p>
+
+    <div class="separator">⸻</div>
+
+    <p><strong>🍸 Meniu Open Bar:</strong><br>
+    • Cocktailuri: Hugo, Cosmopolitan, Vodka Orange<br>
+    • Shoturi: Kamikaze & Kamikaze Blue<br>
+    • Răcoritoare incluse</p>
+
+    <div class="separator">⸻</div>
+
+    <p><strong>🎟️ Bilete:</strong><br>
+    • 40 lei cu rezervare<br>
+    • 70 lei în ziua evenimentului<br>
+    • +10 lei în fiecare săptămână</p>
+
+    <p>⚠️ Locuri limitate la 100 persoane</p>
+
+    <p><strong>🛏️ Cazare:</strong><br>
+    Dacă ești șofer sau vii de departe, avem opțiuni de cazare în zonă. Contactează-ne și te ajutăm cu recomandări!</p>
+
+    <div class="separator">⸻</div>
+
+    <h3>📲 Rezervă-ți locul acum!</h3>
+  </div>
+
+  <div class="form-container">
+    <form id="rezervareForm">
+      <label for="nume">Nume:</label>
+      <input type="text" id="nume" name="nume" required>
+
+      <label for="telefon">Număr de telefon:</label>
+      <input type="tel" id="telefon" name="telefon" required pattern="[0-9]{10}" placeholder="07XXXXXXXX">
+
+      <button type="submit">Trimite pe WhatsApp</button>
+    </form>
+  </div>
+
+</main>
+
+<footer>
+  <p>Instagram: <a href="https://instagram.com/vrajitor_" target="_blank">@vrajitor_</a> | <a href="https://instagram.com/jurchescugheorghita" target="_blank">@jurchescugheorghita</a></p>
+  <p>Telefon: <a href="tel:0737574156">0737574156</a> | <a href="tel:0770855004">0770855004</a></p>
+</footer>
+
+<script>
+  document.getElementById('rezervareForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var nume = document.getElementById('nume').value;
+    var telefon = document.getElementById('telefon').value;
+
+    var mesaj = `Salut! Vreau să fac o rezervare la petrecerea la piscină.\nNume: ${nume}\nTelefon: ${telefon}`;
+    var url = `https://wa.me/40737574156?text=${encodeURIComponent(mesaj)}`;
+    window.open(url, '_blank');
+  });
+</script>
+
+</body>
+</html>
